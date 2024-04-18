@@ -1,0 +1,11 @@
+input {
+  background-color: #f7e8f6;
+  border-radius: 15px;
+  border: none;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem;
+  margin-bottom: 2rem;
+  outline: none;
+  text-decoration: none;
+}
