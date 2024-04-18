@@ -1,8 +1,6 @@
 .pokemon-card {
   background-color: #f7e8f6;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  /* display: grid;
-  grid-template-columns: (3, 1fr); */
   border-radius: 5px;
   padding: 2rem;
 }
