@@ -4,6 +4,7 @@ import CardContainer from "./CardContainer.jsx";
 import Search from "./Search/Search.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
+import { debounce } from "lodash";
 
 function App() {
   const API_URL = "https://pokeapi.co/api/v2/pokemon?limit=151";
@@ -19,8 +20,7 @@ function App() {
     let newList = pokemonData.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(search)
     );
-    setFilteredList(newList);
-    // displaySearch();
+    debounce(setFilteredList(newList), 500);
   }
 
   useEffect(() => {
