@@ -11,15 +11,13 @@ export default function CardContainer({ pokemonData, filteredList, search }) {
 
   const filteredPokemon = filteredList.map((pokemon, index) => (
     <Col>
-      <div className="poke-card">
-        <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
-      </div>
+      <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
     </Col>
   ));
 
   return (
-    <Container fluid>
-      <Row xs={3} sm={3} md={4} lg={5} xl={6}>
+    <Container className="mt-3" fluid>
+      <Row xs={3} sm={4} md={4} lg={5} xl={6}>
         {search ? filteredPokemon : allPokemon}
       </Row>
     </Container>
