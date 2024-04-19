@@ -3,7 +3,6 @@ import Header from "./Header/Header.jsx";
 import CardContainer from "./CardContainer.jsx";
 import Search from "./Search/Search.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "react-bootstrap";
 import { debounce } from "lodash";
 
 function App() {
@@ -14,16 +13,21 @@ function App() {
   const [search, setSearch] = useState("");
   const [filteredList, setFilteredList] = useState([]);
 
-  const debouncedSearch = debounce((e) => handleSearch(e), 500);
-
-  function handleSearch(e) {
+  const handleSearch = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
+  };
+
+  const debouncedSearch = debounce((value) => {
     let newList = pokemonData.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(search)
     );
     setFilteredList(newList);
-  }
+  }, 1000);
+
+  useEffect(() => {
+    debouncedSearch(search);
+  }, [search, debouncedSearch]);
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -55,7 +59,7 @@ function App() {
   return (
     <>
       <Header />
-      <Search handleSearch={debouncedSearch} className="search-bar" />
+      <Search handleSearch={handleSearch} className="search-bar" />
       <CardContainer
         pokemonData={pokemonData}
         filteredList={filteredList}
