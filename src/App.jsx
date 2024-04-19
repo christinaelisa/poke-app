@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header/Header.jsx";
 import CardContainer from "./CardContainer.jsx";
 import Search from "./Search/Search.jsx";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "react-bootstrap";
+
+//import "./App.css";
 
 function App() {
   const API_URL = "https://pokeapi.co/api/v2/pokemon?limit=151";

@@ -1,4 +1,3 @@
-//import App from "./App.jsx";
 import "./Search.css";
 
 export default function Search(props) {

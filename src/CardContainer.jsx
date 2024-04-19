@@ -1,17 +1,27 @@
-import Card from "./Card/Card.jsx";
+import PokemonCard from "./Card/PokemonCard.jsx";
+import { Container, Row, Col } from "react-bootstrap";
+import "./App.css";
 
 export default function CardContainer({ pokemonData, filteredList, search }) {
   const allPokemon = pokemonData.map((pokemon, index) => (
-    <Card key={index} name={pokemon.name} id={pokemon.id} />
+    <Col>
+      <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
+    </Col>
   ));
 
   const filteredPokemon = filteredList.map((pokemon, index) => (
-    <Card key={index} name={pokemon.name} id={pokemon.id} />
+    <Col>
+      <div className="poke-card">
+        <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
+      </div>
+    </Col>
   ));
 
   return (
-    <div className="card-container">
-      {search ? filteredPokemon : allPokemon}
-    </div>
+    <Container fluid>
+      <Row xs={6} sm={6} md={4} lg={5} xl={6}>
+        {search ? filteredPokemon : allPokemon}
+      </Row>
+    </Container>
   );
 }

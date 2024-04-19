@@ -5,12 +5,8 @@
   text-align: center;
 }
 
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  grid-gap: 1rem;
-  position: relative;
+.poke-card {
+  height: 100%;
 }
 
 .error {
