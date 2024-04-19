@@ -14,13 +14,15 @@ function App() {
   const [search, setSearch] = useState("");
   const [filteredList, setFilteredList] = useState([]);
 
+  const debouncedSearch = debounce((e) => handleSearch(e), 500);
+
   function handleSearch(e) {
     e.preventDefault();
     setSearch(e.target.value);
     let newList = pokemonData.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(search)
     );
-    debounce(setFilteredList(newList), 500);
+    setFilteredList(newList);
   }
 
   useEffect(() => {
@@ -43,7 +45,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div className="error">Catching them all...</div>;
+    return <div className="error">Fetching Pokémon...</div>;
   }
 
   if (error) {
@@ -53,7 +55,7 @@ function App() {
   return (
     <>
       <Header />
-      <Search handleSearch={handleSearch} />
+      <Search handleSearch={debouncedSearch} className="search-bar" />
       <CardContainer
         pokemonData={pokemonData}
         filteredList={filteredList}

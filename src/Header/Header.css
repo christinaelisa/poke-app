@@ -2,4 +2,6 @@ h1 {
   color: #bd83ce;
   font-size: 2em;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding-top: 3rem;
 }

@@ -8,3 +8,7 @@ input {
   margin-bottom: 2rem;
   outline: none;
 }
+
+.search-bar {
+  text-align: center;
+}
