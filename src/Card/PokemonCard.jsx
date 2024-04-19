@@ -6,10 +6,10 @@ export default function PokemonCard(props) {
 
   return (
     <Card className="pokemon-card">
-      <Card.Body>
+      <Card.Img class="mx-auto mt-4" src={imageURL} />
+      <Card.Body class="mx-auto mb-4">
         <p className="card-text">{props.name.toUpperCase()}</p>
       </Card.Body>
-      <Card.Img fluid src={imageURL} />
     </Card>
   );
 }
