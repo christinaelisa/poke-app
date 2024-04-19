@@ -4,15 +4,11 @@ import "./App.css";
 
 export default function CardContainer({ pokemonData, filteredList, search }) {
   const allPokemon = pokemonData.map((pokemon, index) => (
-    <Col>
-      <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
-    </Col>
+    <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
   ));
 
   const filteredPokemon = filteredList.map((pokemon, index) => (
-    <Col>
-      <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
-    </Col>
+    <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
   ));
 
   return (

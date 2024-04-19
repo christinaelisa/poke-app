@@ -5,8 +5,6 @@ import Search from "./Search/Search.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 
-//import "./App.css";
-
 function App() {
   const API_URL = "https://pokeapi.co/api/v2/pokemon?limit=151";
   const [pokemonData, setPokemon] = useState([]);
@@ -21,9 +19,8 @@ function App() {
     let newList = pokemonData.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(search)
     );
-    console.log(search);
     setFilteredList(newList);
-    displaySearch();
+    // displaySearch();
   }
 
   useEffect(() => {
