@@ -16,11 +16,11 @@ function App() {
   const handleSearch = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
+    console.log(search);
   };
-
   const debouncedSearch = debounce((value) => {
     let newList = pokemonData.filter((pokemon) =>
-      pokemon.name.toLowerCase().includes(search)
+      pokemon.name.toLowerCase().includes(search.toLowerCase())
     );
     setFilteredList(newList);
   }, 1000);
