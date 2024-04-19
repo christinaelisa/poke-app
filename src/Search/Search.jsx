@@ -7,7 +7,7 @@ export default function Search(props) {
         type="text"
         placeholder="Search Pokémon..."
         onChange={props.handleSearch}
-        onTouchStart={props.handleSearch}
+        onClick={props.handleSearch}
       />
     </div>
   );
