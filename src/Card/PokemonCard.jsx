@@ -5,9 +5,11 @@ export default function PokemonCard(props) {
   const imageURL = `https://img.pokemondb.net/sprites/emerald/normal/${props.name}.png`;
 
   return (
-    <Card className="my-1 pokemon-card">
-      <Card.Body className="card-text">{props.name.toUpperCase()}</Card.Body>
-      <Card.Img src={imageURL} class="img-fluid" />
+    <Card className="pokemon-card">
+      <Card.Body>
+        <p className="card-text">{props.name.toUpperCase()}</p>
+      </Card.Body>
+      <Card.Img fluid src={imageURL} />
     </Card>
   );
 }
