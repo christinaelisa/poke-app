@@ -3,12 +3,22 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./App.css";
 
 export default function CardContainer({ pokemonData, filteredList, search }) {
-  const allPokemon = pokemonData.map((pokemon, index) => (
-    <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
+  const allPokemon = pokemonData.map((pokemon, index, type, id) => (
+    <PokemonCard
+      key={index}
+      name={pokemon.name}
+      id={pokemon.id}
+      type={pokemon.type}
+    />
   ));
 
-  const filteredPokemon = filteredList.map((pokemon, index) => (
-    <PokemonCard key={index} name={pokemon.name} id={pokemon.id} />
+  const filteredPokemon = filteredList.map((pokemon, index, type, id) => (
+    <PokemonCard
+      key={index}
+      name={pokemon.name}
+      id={pokemon.id}
+      type={pokemon.type}
+    />
   ));
 
   return (

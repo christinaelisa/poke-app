@@ -17,6 +17,7 @@ function App() {
     e.preventDefault();
     setSearch(e.target.value);
     console.log(search);
+    console.log(pokemonData);
   };
   const debouncedSearch = debounce((value) => {
     let newList = pokemonData.filter((pokemon) =>
@@ -38,11 +39,11 @@ function App() {
         }
         const data = await response.json();
         setPokemon(data.results);
+        console.log(data.results);
       } catch (error) {
         setError(error.message);
       } finally {
         setLoading(false);
-        console.log(pokemonData);
       }
     };
     fetchPokemon();

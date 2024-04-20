@@ -9,18 +9,16 @@
 }
 
 .pokemon-card {
-  background-color: #ffffff;
-  border: none;
+  background-color: #e5c531;
+  border: dashed;
   text-align: center;
   width: 100%;
   height: auto;
 }
 
-/* .pokemon-card:hover {
+.pokemon-card:hover {
   background-color: rgb(243, 240, 240);
-  color: black;
-  scale: 1.05;
-} */
+}
 
 .card-wrapper {
   height: 100%;

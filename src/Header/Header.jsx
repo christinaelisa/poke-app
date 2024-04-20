@@ -1,10 +1,9 @@
 import "./Header.css";
-import Search from "../Search/Search.jsx";
 
-export default function Header(props) {
+export default function Header() {
   return (
     <>
-      <h1>PokéApp</h1>
+      <div className="app-title">PokéApp</div>
     </>
   );
 }
