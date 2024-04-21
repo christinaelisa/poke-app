@@ -22,7 +22,7 @@ export default function CardContainer({ pokemonData, filteredList, search }) {
   ));
 
   return (
-    <Container className="mt-3" fluid>
+    <Container fluid>
       <Row xs={3} sm={4} md={4} lg={5} xl={6}>
         {search ? filteredPokemon : allPokemon}
       </Row>

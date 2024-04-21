@@ -59,8 +59,8 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Search handleSearch={handleSearch} className="search-bar" />
+      <Header handleSearch={handleSearch} />
+      {/* <Search handleSearch={handleSearch} className="search-bar" /> */}
       <CardContainer
         pokemonData={pokemonData}
         filteredList={filteredList}

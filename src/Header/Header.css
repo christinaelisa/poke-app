@@ -4,11 +4,11 @@
 }
 
 .app-title {
-  background-color: #e5c531;
   color: black;
-  font-size: 3em;
+  font-size: 2.5em;
   font-family: "Pokemon", sans-serif;
-  text-align: center;
-  padding-top: 2rem;
+  text-align: left;
+  padding-top: 1rem;
   padding-bottom: 1rem;
+  text-decoration: none;
 }
