@@ -9,9 +9,9 @@ export default function Header({ handleSearch }) {
         <nav class="navbar bg-body-tertiary">
           <div class="container-fluid">
             <div className="app-title">PokéApp</div>
-            <form class="d-flex me-2" role="search">
+            <form class="d-flex" role="search">
               <input
-                class="d-flex me-2"
+                class="d-flex"
                 type="search"
                 placeholder="Search Pokémon..."
                 aria-label="Search"
