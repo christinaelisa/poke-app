@@ -5,8 +5,8 @@ import "../Search/Search.css";
 export default function Header({ handleSearch }) {
   return (
     <>
-      <div>
-        <nav class="navbar bg-body-tertiary">
+      <div className="nav-bg">
+        <nav class="navbar">
           <div class="container-fluid">
             <div className="app-title">PokéApp</div>
             <form class="d-flex" role="search">
