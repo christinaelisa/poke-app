@@ -1,17 +1,32 @@
-card-text {
-  font-size: vw 4;
-}
-
-.pokemon-card {
-  background-color: #ffffff;
+.card-text {
+  font-size: 16px;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  border: none;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.pokemon-card:hover {
-  background-color: rgb(243, 240, 240);
-  color: black;
-  scale: 1.05;
+/*iPad Pro/Mini/Air/Surface Pro*/
+@media (max-width: 1100px) {
+  .card-text {
+    font-size: 24px;
+  }
+}
+
+/*iPhone SE/XR/12Pro Pixel 7/*/
+@media (max-width: 767px) {
+  .card-text {
+    font-size: 16px;
+  }
+}
+
+/*Galaxy Fold*/
+@media (max-width: 300px) {
+  .card-text {
+    font-size: 11px;
+  }
 }
 
 .card-wrapper {

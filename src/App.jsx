@@ -3,9 +3,7 @@ import Header from "./Header/Header.jsx";
 import CardContainer from "./CardContainer.jsx";
 import Search from "./Search/Search.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "react-bootstrap";
-
-//import "./App.css";
+import { debounce } from "lodash";
 
 function App() {
   const API_URL = "https://pokeapi.co/api/v2/pokemon?limit=151";
@@ -15,16 +13,22 @@ function App() {
   const [search, setSearch] = useState("");
   const [filteredList, setFilteredList] = useState([]);
 
-  function handleSearch(e) {
+  const handleSearch = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
-    let newList = pokemonData.filter((pokemon) =>
-      pokemon.name.toLowerCase().includes(search)
-    );
     console.log(search);
+    console.log(pokemonData);
+  };
+  const debouncedSearch = debounce((value) => {
+    let newList = pokemonData.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(search.toLowerCase())
+    );
     setFilteredList(newList);
-    displaySearch();
-  }
+  }, 1000);
+
+  useEffect(() => {
+    debouncedSearch(search);
+  }, [search, debouncedSearch]);
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -35,18 +39,18 @@ function App() {
         }
         const data = await response.json();
         setPokemon(data.results);
+        console.log(data.results);
       } catch (error) {
         setError(error.message);
       } finally {
         setLoading(false);
-        console.log(pokemonData);
       }
     };
     fetchPokemon();
   }, []);
 
   if (loading) {
-    return <div className="error">Catching them all...</div>;
+    return <div className="error">Fetching Pokémon...</div>;
   }
 
   if (error) {
@@ -55,8 +59,7 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Search handleSearch={handleSearch} />
+      <Header handleSearch={handleSearch} />
       <CardContainer
         pokemonData={pokemonData}
         filteredList={filteredList}
