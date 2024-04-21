@@ -24,6 +24,12 @@
   }
 }
 
+@media (max-width: 767px) {
+  .navbar {
+    text-align: center;
+  }
+}
+
 .nav-bg {
   background-color: #e5c531;
 }
