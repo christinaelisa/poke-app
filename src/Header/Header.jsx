@@ -11,6 +11,7 @@ export default function Header({ handleSearch }) {
             <div className="app-title">PokéApp</div>
             <form class="d-flex me-2" role="search">
               <input
+                class="d-flex me-2"
                 type="search"
                 placeholder="Search Pokémon..."
                 aria-label="Search"

@@ -12,3 +12,14 @@
   padding-bottom: 1rem;
   text-decoration: none;
 }
+
+@media (max-width: 767px) {
+  .navbar form input {
+    width: 100%;
+    margin: 0;
+  }
+  .navbar form {
+    width: 100%;
+    margin: 0;
+  }
+}
