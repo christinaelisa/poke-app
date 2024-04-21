@@ -8,7 +8,7 @@ export default function Header({ handleSearch }) {
       <div className="nav-bg">
         <nav class="navbar">
           <div class="container-fluid">
-            <div className="app-title">PokéApp</div>
+            <div className="app-title">PokéDex</div>
             <form class="d-flex" role="search">
               <input
                 class="d-flex"
