@@ -8,7 +8,7 @@ export default function PokemonCard(props) {
     <Card>
       <Card.Img class="mx-auto mt-4 mb-1" src={imageURL} />
       <Card.Body class="mx-auto mb-3">
-        <p className="card-text">{props.name.toUpperCase()}</p>
+        <p class="card-text">{props.name.toUpperCase()}</p>
       </Card.Body>
     </Card>
   );

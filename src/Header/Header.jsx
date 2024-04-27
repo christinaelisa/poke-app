@@ -5,7 +5,7 @@ import "../Search/Search.css";
 export default function Header({ handleSearch }) {
   return (
     <>
-      <div className="nav-bg">
+      <div class="nav-bg">
         <nav class="navbar">
           <div class="container-fluid">
             <div className="app-title">PokéDex</div>
