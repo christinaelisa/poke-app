@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header/Header.jsx";
 import CardContainer from "./CardContainer.jsx";
-import Search from "./Search/Search.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { debounce } from "lodash";
 
 function App() {
   const API_URL = "https://pokeapi.co/api/v2/pokemon?limit=151";
   const [pokemonData, setPokemon] = useState([]);
+  const [allPokemonData, setPokemonData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
@@ -15,10 +15,9 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setSearch(e.target.value);
-    console.log(search);
-    console.log(pokemonData);
+    setSearch(e.target.value.trim());
   };
+
   const debouncedSearch = debounce((value) => {
     let newList = pokemonData.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(search.toLowerCase())
@@ -39,7 +38,13 @@ function App() {
         }
         const data = await response.json();
         setPokemon(data.results);
-        console.log(data.results);
+        const pokeURL = data.results.map((pokemon) => pokemon.url);
+        const allPokeData = await Promise.all(pokeURL.map((url) => fetch(url)));
+        const allPokeObj = await Promise.all(
+          allPokeData.map((res) => res.json())
+        );
+        setPokemon(allPokeObj);
+        console.log(allPokeObj);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -50,7 +55,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div className="error">Fetching Pokémon...</div>;
+    return <div className="error">Loading...</div>;
   }
 
   if (error) {
@@ -62,6 +67,7 @@ function App() {
       <Header handleSearch={handleSearch} />
       <CardContainer
         pokemonData={pokemonData}
+        allPokemonData={allPokemonData}
         filteredList={filteredList}
         search={search}
       />

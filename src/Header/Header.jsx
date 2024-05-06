@@ -1,23 +1,15 @@
 import "./Header.css";
-import "../Search/Search.jsx";
 import "../Search/Search.css";
+import Search from "../Search/Search.jsx";
 
 export default function Header({ handleSearch }) {
   return (
     <>
-      <div class="nav-bg">
-        <nav class="navbar">
-          <div class="container-fluid">
+      <div className="nav-bg">
+        <nav className="navbar">
+          <div className="container-fluid">
             <div className="app-title">PokéDex</div>
-            <form class="d-flex" role="search">
-              <input
-                class="d-flex"
-                type="search"
-                placeholder="Search Pokémon..."
-                aria-label="Search"
-                onChange={handleSearch}
-              />
-            </form>
+            <Search handleSearch={handleSearch} />
           </div>
         </nav>
       </div>
