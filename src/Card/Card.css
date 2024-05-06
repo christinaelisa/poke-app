@@ -28,6 +28,11 @@
   }
 }
 
+.card:hover {
+  opacity: 0.5;
+  background-color: rgb(230, 226, 226);
+}
+
 .poke-id {
   color: black;
   position: absolute;
