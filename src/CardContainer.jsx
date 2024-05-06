@@ -16,7 +16,7 @@ export default function CardContainer({ pokemonData, filteredList, search }) {
       }
       type2={
         pokemon.types && pokemon.types.length > 1
-          ? ", " + pokemon.types[1].type.name
+          ? pokemon.types[1].type.name
           : ""
       }
     />
@@ -34,7 +34,7 @@ export default function CardContainer({ pokemonData, filteredList, search }) {
       }
       type2={
         pokemon.types && pokemon.types.length > 1
-          ? ", " + pokemon.types[1].type.name
+          ? pokemon.types[1].type.name
           : ""
       }
     />
