@@ -8,11 +8,6 @@ export default function PokemonCard(props) {
   let textType1 = "";
   let textType2 = "";
 
-  // Pokemon types: Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison,
-  // Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel,
-  // Fairy, Stellar, Unknown
-
-  //conditional rendering for secondary type text bubbles
   if (props.type2 === "normal") {
     textType2 = "normal-text";
   } else if (props.type2 === "fire") {
@@ -55,7 +50,6 @@ export default function PokemonCard(props) {
     textType2 = "unknown-text";
   }
 
-  //conditional rendering for border and type 1 color
   if (props.type === "normal") {
     cardType = "normal-type";
     textType1 = "normal-text";
