@@ -1,10 +1,23 @@
-.card-text {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  text-align: center;
-  white-space: nowrap;
+:root {
+  --normal-type-color: #a8a77a;
+  --fire-type-color: #ee8130;
+  --water-type-color: #6390f0;
+  --electric-type-color: #f7d02c;
+  --grass-type-color: #7ac74c;
+  --ice-type-color: #96d9d6;
+  --fighting-type-color: #c22e28;
+  --poison-type-color: #a33ea1;
+  --ground-type-color: #e2bf65;
+  --flying-type-color: #a98ff3;
+  --psychic-type-color: #f95587;
+  --bug-type-color: #a6b91a;
+  --rock-type-color: #b6a136;
+  --ghost-type-color: #735797;
+  --dragon-type-color: #6f35fc;
+  --dark-type-color: #705746;
+  --steel-type-color: #b7b7ce;
+  --fairy-type-color: #d685ad;
+  --stellar-type-color: #db98db;
 }
 
 /*iPad Pro/Mini/Air/Surface Pro*/
@@ -28,9 +41,23 @@
   }
 }
 
+/* .card {
+  margin-block: 1rem;
+} */
+
 .card:hover {
   opacity: 0.5;
   background-color: rgb(230, 226, 226);
+}
+
+.card-text {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .poke-id {
@@ -41,82 +68,408 @@
   margin-right: 5px;
 }
 
+/*
+Pokemon types: Normal, Fire, Water, Electric, Grass, Ice, Fighting, 
+Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel,
+Fairy, Stellar, Unknown
+*/
+
+/*Normal Type*/
 .normal-type {
-  border-color: solid 2px #a8a77a;
+  border-color: var(--normal-type-color) !important;
+  border-width: 3px !important;
 }
 
+.normal-text {
+  background-color: #a7a7a0 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Fire Type*/
 .fire-type {
-  border-color: solid 2px #ee8130;
+  border-color: var(--fire-type-color) !important;
+  border-width: 3px !important;
 }
 
+.fire-text {
+  background-color: #ecb488 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Water Type*/
 .water-type {
-  border-color: solid 2px #6390f0;
+  border-color: var(--water-type-color) !important;
+  border-width: 3px !important;
 }
 
+.water-text {
+  background-color: #90abe6 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Electric Type*/
 .electric-type {
-  border-color: solid 2px #f7d02c;
+  border-color: var(--electric-type-color) !important;
+  border-width: 3px !important;
 }
 
+.electric-text {
+  background-color: #efd97f !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Grass Type*/
 .grass-type {
-  border-color: solid 2px #7ac74c;
+  border-color: var(--grass-type-color) !important;
+  border-width: 3px !important;
 }
 
+.grass-text {
+  background-color: #b9dda5 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Ice Type*/
 .ice-type {
-  border-color: solid 2px #96d9d6;
+  border-color: var(--ice-type-color) !important;
+  border-width: 3px !important;
 }
 
+.ice-text {
+  background-color: #bfe8e6 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Fighting Type*/
 .fighting-type {
-  border-color: solid 2px #c22e28;
+  border-color: var(--fighting-type-color) !important;
+  border-width: 3px !important;
 }
 
+.fighting-text {
+  background-color: #cd918f !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Poison Type*/
 .poison-type {
-  border-color: solid 2px #a33ea1;
+  border-color: var(--poison-type-color) !important;
+  border-width: 3px !important;
 }
 
+.poison-text {
+  background-color: #b898b7 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Ground Type*/
 .ground-type {
-  border-color: solid 2px #e2bf65;
+  border-color: var(--ground-type-color) !important;
+  border-width: 3px !important;
 }
 
+.ground-text {
+  background-color: rgb(177, 170, 138) !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Flying Type*/
 .flying-type {
-  border-color: solid 2px #a98ff3;
+  border-color: var(--flying-type-color) !important;
+  border-width: 3px !important;
 }
 
+.flying-text {
+  background-color: #b9dda5 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Psychic Type*/
 .psychic-type {
-  border-color: solid 2px #f95587;
+  border-color: var(--psychic-type-color) !important;
+  border-width: 3px !important;
 }
 
+.psychic-text {
+  background-color: #ebafc1 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Bug Type*/
 .bug-type {
-  border-color: solid 2px #a6b91a;
+  border-color: var(--bug-type-color) !important;
+  border-width: 3px !important;
 }
 
+.bug-text {
+  background-color: #ced690 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Rock Type*/
 .rock-type {
-  border-color: solid 2px #b6a136;
+  border-color: var(--rock-type-color) !important;
+  border-width: 3px !important;
 }
 
+.rock-text {
+  background-color: #b5aa73 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Ghost Type*/
 .ghost-type {
-  border-color: solid 2px #735797;
+  border-color: var(--ghost-type-color) !important;
+  border-width: 3px !important;
 }
 
+.ghost-text {
+  background-color: #b4a5c9 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Dragon Type*/
 .dragon-type {
-  border-color: solid 2px #6f35fc;
+  border-color: var(--dragon-type-color) !important;
+  border-width: 3px !important;
 }
 
+.dragon-text {
+  background-color: #ac90f0 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Dark Type*/
 .dark-type {
-  border-color: solid 2px #705746;
+  border-color: var(--dark-type-color) !important;
+  border-width: 3px !important;
 }
 
+.dark-text {
+  background-color: #988273 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Steel Type*/
 .steel-type {
-  border-color: solid 2px #b7b7ce;
+  border-color: var(--steel-type-color) !important;
+  border-width: 3px !important;
 }
 
+.steel-text {
+  background-color: rgb(188, 168, 156) !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Fairy Type*/
 .fairy-type {
-  border-color: solid 2px #d685ad;
+  border-color: var(--fairy-type-color) !important;
+  border-width: 3px !important;
 }
 
+.fairy-text {
+  background-color: #d69cb9 !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Stellar Type*/
 .stellar-type {
-  border-color: solid 2px purple;
+  border-color: var(--stellar-type-color) !important;
+  border-width: 3px !important;
 }
 
+.stellar-text {
+  background-color: var(--stellar-type-color) !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/*Unknown Type*/
 .unknown-type {
-  border-color: solid 2px grey;
+  border-color: rgb(151, 149, 149) !important;
+  border-width: 3px !important;
+}
+
+.unknown-text {
+  background-color: rgb(151, 149, 149) !important;
+  border-radius: 10px;
+  color: black;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
 }
