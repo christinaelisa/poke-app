@@ -1,23 +1,42 @@
 import PokemonCard from "./Card/PokemonCard.jsx";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 
 export default function CardContainer({ pokemonData, filteredList, search }) {
-  const allPokemon = pokemonData.map((pokemon, index, type, id) => (
+  const allPokemon = pokemonData.map((pokemon) => (
     <PokemonCard
-      key={index}
-      name={pokemon.name}
       id={pokemon.id}
-      type={pokemon.type}
+      key={uuidv4()}
+      name={pokemon.name}
+      type={
+        pokemon.types && pokemon.types.length > 0
+          ? pokemon.types[0].type.name
+          : ""
+      }
+      type2={
+        pokemon.types && pokemon.types.length > 1
+          ? ", " + pokemon.types[1].type.name
+          : ""
+      }
     />
   ));
 
-  const filteredPokemon = filteredList.map((pokemon, index, type, id) => (
+  const filteredPokemon = filteredList.map((pokemon) => (
     <PokemonCard
-      key={index}
-      name={pokemon.name}
       id={pokemon.id}
-      type={pokemon.type}
+      key={uuidv4()}
+      name={pokemon.name}
+      type={
+        pokemon.types && pokemon.types.length > 0
+          ? pokemon.types[0].type.name
+          : ""
+      }
+      type2={
+        pokemon.types && pokemon.types.length > 1
+          ? ", " + pokemon.types[1].type.name
+          : ""
+      }
     />
   ));
 

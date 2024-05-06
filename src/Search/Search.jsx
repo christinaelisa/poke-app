@@ -1,13 +1,15 @@
 import "./Search.css";
 
-export default function Search(props) {
+export default function Search({ handleSearch }) {
   return (
-    <div className="search-bar">
+    <form className="d-flex" role="search">
       <input
-        type="text"
+        className="d-flex"
+        type="search"
         placeholder="Search Pokémon..."
-        onChange={props.handleSearch}
+        aria-label="Search"
+        onChange={handleSearch}
       />
-    </div>
+    </form>
   );
 }
