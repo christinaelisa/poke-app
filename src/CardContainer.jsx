@@ -42,7 +42,7 @@ export default function CardContainer({ pokemonData, filteredList, search }) {
 
   return (
     <Container fluid>
-      <Row xs={3} sm={4} md={4} lg={5} xl={6}>
+      <Row xs={2} sm={4} md={4} lg={5} xl={6}>
         {search ? filteredPokemon : allPokemon}
       </Row>
     </Container>
