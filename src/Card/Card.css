@@ -41,15 +41,6 @@
   }
 }
 
-/* .card {
-  margin-block: 1rem;
-} */
-
-.card:hover {
-  opacity: 0.5;
-  background-color: rgb(230, 226, 226);
-}
-
 .card-text {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
