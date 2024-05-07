@@ -2,7 +2,11 @@ import "../Card/Card.css";
 import { Card } from "react-bootstrap";
 
 export default function PokemonCard(props) {
-  const imageURL = `https://img.pokemondb.net/sprites/emerald/normal/${props.name}.png`;
+  // const imageURL = `https://img.pokemondb.net/sprites/emerald/normal/${props.name}.png`;
+
+  // const imageURL = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/${props.id}.png`;
+
+  const imageURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props.id}.png`;
 
   let cardType = "card";
   let textType1 = "";
@@ -115,10 +119,14 @@ export default function PokemonCard(props) {
   return (
     <Card className={cardType}>
       <div class="poke-id fw-bold">#{props.id}</div>
-      <Card.Img class="mx-auto mt-4 mb-1" src={imageURL} />
+      <Card.Img
+        class="mx-auto mt-4 mb-1 pokeimg"
+        src={imageURL}
+        alt={props.name}
+      />
       <Card.Body class="mx-auto mb-3">
         <p class="card-text">
-          <span class="fw-bold">{props.name.toUpperCase()}</span>
+          <span class="fw-bold mx-auto py-2">{props.name.toUpperCase()}</span>
           <br />
           <span className={textType1}>{props.type}</span>
           {props.type2.length > 0 ? (
