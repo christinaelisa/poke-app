@@ -1,43 +1,557 @@
-:root {
-  --normal-type-color: #a8a77a;
-  --fire-type-color: #ee8130;
-  --water-type-color: #6390f0;
-  --electric-type-color: #f7d02c;
-  --grass-type-color: #7ac74c;
-  --ice-type-color: #96d9d6;
-  --fighting-type-color: #c22e28;
-  --poison-type-color: #a33ea1;
-  --ground-type-color: #e2bf65;
-  --flying-type-color: #a98ff3;
-  --psychic-type-color: #f95587;
-  --bug-type-color: #a6b91a;
-  --rock-type-color: #b6a136;
-  --ghost-type-color: #735797;
-  --dragon-type-color: #6f35fc;
-  --dark-type-color: #705746;
-  --steel-type-color: #b7b7ce;
-  --fairy-type-color: #d685ad;
-  --stellar-type-color: #db98db;
+//create variables for each color type
+//create variable for card theme
+
+@mixin pill-theme {
+  border-radius: 10px;
+  border-color: #ffffff;
+  color: #ffffff;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
 }
+
+$normal-type-bg: linear-gradient(
+  0deg,
+  hsl(59deg 21% 57%) 0%,
+  hsl(59deg 20% 60%) 7%,
+  hsl(59deg 20% 63%) 14%,
+  hsl(59deg 19% 65%) 21%,
+  hsl(59deg 19% 68%) 26%,
+  hsl(59deg 18% 70%) 31%,
+  hsl(59deg 18% 73%) 35%,
+  hsl(59deg 18% 75%) 37%,
+  hsl(59deg 18% 77%) 39%,
+  hsl(59deg 17% 79%) 41%,
+  hsl(59deg 17% 82%) 43%,
+  hsl(59deg 17% 84%) 47%,
+  hsl(59deg 17% 86%) 51%,
+  hsl(59deg 16% 87%) 56%,
+  hsl(59deg 16% 89%) 61%,
+  hsl(59deg 16% 91%) 67%,
+  hsl(59deg 16% 93%) 73%,
+  hsl(59deg 16% 95%) 79%,
+  hsl(59deg 16% 97%) 86%,
+  hsl(58deg 15% 98%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$grass-type-bg: linear-gradient(
+  0deg,
+  hsl(98deg 52% 54%) 0%,
+  hsl(99deg 51% 58%) 7%,
+  hsl(100deg 49% 61%) 14%,
+  hsl(100deg 48% 65%) 21%,
+  hsl(101deg 47% 67%) 26%,
+  hsl(101deg 47% 70%) 31%,
+  hsl(102deg 46% 73%) 35%,
+  hsl(102deg 45% 75%) 37%,
+  hsl(102deg 45% 77%) 39%,
+  hsl(102deg 44% 80%) 41%,
+  hsl(103deg 44% 82%) 43%,
+  hsl(103deg 43% 84%) 47%,
+  hsl(103deg 43% 86%) 51%,
+  hsl(103deg 42% 88%) 56%,
+  hsl(103deg 42% 90%) 61%,
+  hsl(103deg 41% 91%) 67%,
+  hsl(103deg 41% 93%) 73%,
+  hsl(104deg 41% 95%) 79%,
+  hsl(104deg 41% 97%) 86%,
+  hsl(104deg 40% 98%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$fire-type-bg: linear-gradient(
+  0deg,
+  hsl(26deg 85% 56%) 0%,
+  hsl(23deg 84% 61%) 7%,
+  hsl(22deg 83% 65%) 14%,
+  hsl(21deg 82% 68%) 21%,
+  hsl(20deg 82% 71%) 26%,
+  hsl(20deg 81% 74%) 31%,
+  hsl(19deg 81% 76%) 35%,
+  hsl(19deg 80% 78%) 37%,
+  hsl(18deg 80% 80%) 39%,
+  hsl(18deg 79% 82%) 41%,
+  hsl(18deg 79% 84%) 43%,
+  hsl(17deg 79% 86%) 47%,
+  hsl(17deg 78% 88%) 51%,
+  hsl(17deg 78% 90%) 56%,
+  hsl(17deg 78% 91%) 61%,
+  hsl(17deg 78% 93%) 67%,
+  hsl(16deg 77% 94%) 73%,
+  hsl(16deg 77% 96%) 79%,
+  hsl(16deg 77% 97%) 86%,
+  hsl(16deg 77% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$water-type-bg: linear-gradient(
+  0deg,
+  hsl(221deg 82% 66%) 0%,
+  hsl(222deg 82% 69%) 7%,
+  hsl(222deg 81% 72%) 14%,
+  hsl(223deg 81% 74%) 21%,
+  hsl(223deg 81% 76%) 26%,
+  hsl(224deg 80% 78%) 31%,
+  hsl(224deg 80% 80%) 35%,
+  hsl(224deg 79% 82%) 37%,
+  hsl(224deg 79% 83%) 39%,
+  hsl(225deg 79% 85%) 41%,
+  hsl(225deg 79% 86%) 43%,
+  hsl(225deg 78% 88%) 47%,
+  hsl(225deg 78% 89%) 51%,
+  hsl(225deg 78% 91%) 56%,
+  hsl(226deg 78% 92%) 61%,
+  hsl(226deg 77% 94%) 67%,
+  hsl(226deg 77% 95%) 73%,
+  hsl(226deg 77% 96%) 79%,
+  hsl(226deg 77% 98%) 86%,
+  hsl(226deg 76% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$electric-type-bg: linear-gradient(
+  0deg,
+  hsl(48deg 93% 57%) 0%,
+  hsl(47deg 92% 63%) 7%,
+  hsl(47deg 92% 66%) 14%,
+  hsl(46deg 91% 70%) 21%,
+  hsl(46deg 91% 72%) 26%,
+  hsl(45deg 91% 75%) 31%,
+  hsl(45deg 90% 77%) 35%,
+  hsl(45deg 90% 79%) 37%,
+  hsl(44deg 90% 81%) 39%,
+  hsl(44deg 90% 83%) 41%,
+  hsl(44deg 90% 85%) 43%,
+  hsl(44deg 89% 87%) 47%,
+  hsl(43deg 89% 88%) 51%,
+  hsl(43deg 89% 90%) 56%,
+  hsl(43deg 89% 92%) 61%,
+  hsl(43deg 89% 93%) 67%,
+  hsl(43deg 89% 95%) 73%,
+  hsl(42deg 88% 96%) 79%,
+  hsl(42deg 88% 97%) 86%,
+  hsl(42deg 88% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$ice-type-bg: linear-gradient(
+  0deg,
+  hsl(177deg 47% 72%) 0%,
+  hsl(177deg 46% 74%) 7%,
+  hsl(177deg 46% 75%) 14%,
+  hsl(177deg 45% 77%) 21%,
+  hsl(177deg 45% 79%) 26%,
+  hsl(177deg 45% 80%) 31%,
+  hsl(177deg 44% 82%) 35%,
+  hsl(177deg 44% 83%) 37%,
+  hsl(177deg 44% 85%) 39%,
+  hsl(177deg 43% 86%) 41%,
+  hsl(177deg 43% 87%) 43%,
+  hsl(177deg 43% 89%) 47%,
+  hsl(177deg 42% 90%) 51%,
+  hsl(177deg 42% 91%) 56%,
+  hsl(177deg 42% 93%) 61%,
+  hsl(177deg 42% 94%) 67%,
+  hsl(177deg 42% 95%) 73%,
+  hsl(177deg 41% 96%) 79%,
+  hsl(177deg 41% 98%) 86%,
+  hsl(177deg 41% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$fighting-type-bg: linear-gradient(
+  0deg,
+  hsl(2deg 66% 46%) 0%,
+  hsl(2deg 53% 52%) 7%,
+  hsl(1deg 51% 57%) 14%,
+  hsl(1deg 49% 61%) 21%,
+  hsl(1deg 48% 64%) 26%,
+  hsl(1deg 47% 67%) 31%,
+  hsl(1deg 46% 70%) 35%,
+  hsl(1deg 46% 73%) 37%,
+  hsl(1deg 45% 75%) 39%,
+  hsl(1deg 44% 78%) 41%,
+  hsl(1deg 44% 80%) 43%,
+  hsl(1deg 43% 82%) 47%,
+  hsl(1deg 43% 85%) 51%,
+  hsl(1deg 42% 87%) 56%,
+  hsl(1deg 42% 89%) 61%,
+  hsl(1deg 41% 91%) 67%,
+  hsl(1deg 41% 93%) 73%,
+  hsl(1deg 41% 95%) 79%,
+  hsl(1deg 40% 96%) 86%,
+  hsl(1deg 40% 98%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$poison-type-bg: linear-gradient(
+  0deg,
+  hsl(301deg 45% 44%) 0%,
+  hsl(301deg 34% 49%) 7%,
+  hsl(301deg 32% 54%) 14%,
+  hsl(301deg 30% 58%) 21%,
+  hsl(301deg 29% 61%) 26%,
+  hsl(301deg 29% 64%) 31%,
+  hsl(302deg 28% 67%) 35%,
+  hsl(302deg 27% 70%) 37%,
+  hsl(302deg 27% 73%) 39%,
+  hsl(302deg 26% 76%) 41%,
+  hsl(302deg 26% 78%) 43%,
+  hsl(302deg 25% 81%) 47%,
+  hsl(302deg 25% 83%) 51%,
+  hsl(302deg 25% 85%) 56%,
+  hsl(302deg 24% 88%) 61%,
+  hsl(302deg 24% 90%) 67%,
+  hsl(302deg 24% 92%) 73%,
+  hsl(302deg 23% 94%) 79%,
+  hsl(302deg 23% 96%) 86%,
+  hsl(302deg 23% 98%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$ground-type-bg: linear-gradient(
+  0deg,
+  hsl(43deg 68% 64%) 0%,
+  hsl(43deg 67% 67%) 7%,
+  hsl(42deg 67% 69%) 14%,
+  hsl(42deg 66% 72%) 21%,
+  hsl(42deg 65% 74%) 26%,
+  hsl(41deg 65% 76%) 31%,
+  hsl(41deg 64% 78%) 35%,
+  hsl(41deg 64% 80%) 37%,
+  hsl(40deg 63% 82%) 39%,
+  hsl(40deg 63% 84%) 41%,
+  hsl(40deg 63% 85%) 43%,
+  hsl(40deg 62% 87%) 47%,
+  hsl(40deg 62% 89%) 51%,
+  hsl(39deg 61% 90%) 56%,
+  hsl(39deg 61% 92%) 61%,
+  hsl(39deg 61% 93%) 67%,
+  hsl(39deg 61% 95%) 73%,
+  hsl(39deg 60% 96%) 79%,
+  hsl(39deg 60% 97%) 86%,
+  hsl(39deg 60% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$flying-type-bg: linear-gradient(
+  0deg,
+  hsl(256deg 81% 76%) 0%,
+  hsl(255deg 80% 77%) 7%,
+  hsl(255deg 80% 79%) 14%,
+  hsl(255deg 80% 80%) 21%,
+  hsl(255deg 79% 82%) 26%,
+  hsl(254deg 79% 83%) 31%,
+  hsl(254deg 79% 84%) 35%,
+  hsl(254deg 79% 86%) 37%,
+  hsl(254deg 79% 87%) 39%,
+  hsl(254deg 78% 88%) 41%,
+  hsl(254deg 78% 89%) 43%,
+  hsl(253deg 78% 91%) 47%,
+  hsl(253deg 78% 92%) 51%,
+  hsl(253deg 78% 93%) 56%,
+  hsl(253deg 77% 94%) 61%,
+  hsl(253deg 77% 95%) 67%,
+  hsl(253deg 77% 96%) 73%,
+  hsl(253deg 77% 97%) 79%,
+  hsl(253deg 77% 98%) 86%,
+  hsl(253deg 77% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$psychic-type-bg: linear-gradient(
+  0deg,
+  hsl(342deg 93% 65%) 0%,
+  hsl(343deg 93% 69%) 7%,
+  hsl(343deg 93% 71%) 14%,
+  hsl(344deg 92% 74%) 21%,
+  hsl(345deg 92% 76%) 26%,
+  hsl(345deg 92% 78%) 31%,
+  hsl(345deg 92% 80%) 35%,
+  hsl(346deg 92% 82%) 37%,
+  hsl(346deg 92% 83%) 39%,
+  hsl(346deg 91% 85%) 41%,
+  hsl(346deg 91% 87%) 43%,
+  hsl(347deg 91% 88%) 47%,
+  hsl(347deg 91% 90%) 51%,
+  hsl(347deg 91% 91%) 56%,
+  hsl(347deg 91% 92%) 61%,
+  hsl(347deg 91% 94%) 67%,
+  hsl(347deg 90% 95%) 73%,
+  hsl(348deg 90% 96%) 79%,
+  hsl(348deg 90% 98%) 86%,
+  hsl(348deg 90% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$bug-type-bg: linear-gradient(
+  0deg,
+  hsl(67deg 75% 41%) 0%,
+  hsl(68deg 50% 49%) 7%,
+  hsl(69deg 47% 54%) 14%,
+  hsl(69deg 45% 59%) 21%,
+  hsl(70deg 44% 62%) 26%,
+  hsl(70deg 43% 66%) 31%,
+  hsl(70deg 42% 69%) 35%,
+  hsl(71deg 41% 71%) 37%,
+  hsl(71deg 40% 74%) 39%,
+  hsl(71deg 40% 77%) 41%,
+  hsl(71deg 39% 79%) 43%,
+  hsl(71deg 39% 82%) 47%,
+  hsl(71deg 38% 84%) 51%,
+  hsl(71deg 38% 86%) 56%,
+  hsl(71deg 37% 88%) 61%,
+  hsl(72deg 37% 90%) 67%,
+  hsl(72deg 37% 92%) 73%,
+  hsl(72deg 36% 94%) 79%,
+  hsl(72deg 36% 96%) 86%,
+  hsl(72deg 36% 98%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$rock-type-bg: linear-gradient(
+  0deg,
+  hsl(50deg 54% 46%) 0%,
+  hsl(49deg 44% 52%) 7%,
+  hsl(49deg 42% 56%) 14%,
+  hsl(48deg 41% 60%) 21%,
+  hsl(48deg 40% 63%) 26%,
+  hsl(48deg 39% 66%) 31%,
+  hsl(47deg 38% 69%) 35%,
+  hsl(47deg 37% 72%) 37%,
+  hsl(47deg 37% 75%) 39%,
+  hsl(47deg 36% 77%) 41%,
+  hsl(47deg 36% 80%) 43%,
+  hsl(47deg 35% 82%) 47%,
+  hsl(46deg 35% 84%) 51%,
+  hsl(46deg 34% 86%) 56%,
+  hsl(46deg 34% 88%) 61%,
+  hsl(46deg 34% 90%) 67%,
+  hsl(46deg 33% 92%) 73%,
+  hsl(46deg 33% 94%) 79%,
+  hsl(46deg 33% 96%) 86%,
+  hsl(46deg 32% 98%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$ghost-type-bg: linear-gradient(
+  0deg,
+  hsl(266deg 27% 47%) 0%,
+  hsl(265deg 22% 51%) 7%,
+  hsl(265deg 21% 55%) 14%,
+  hsl(264deg 20% 58%) 21%,
+  hsl(264deg 20% 62%) 26%,
+  hsl(264deg 19% 65%) 31%,
+  hsl(264deg 19% 68%) 35%,
+  hsl(263deg 18% 71%) 37%,
+  hsl(263deg 18% 73%) 39%,
+  hsl(263deg 18% 76%) 41%,
+  hsl(263deg 17% 78%) 43%,
+  hsl(263deg 17% 81%) 47%,
+  hsl(263deg 17% 83%) 51%,
+  hsl(263deg 17% 86%) 56%,
+  hsl(263deg 16% 88%) 61%,
+  hsl(263deg 16% 90%) 67%,
+  hsl(262deg 16% 92%) 73%,
+  hsl(262deg 16% 94%) 79%,
+  hsl(262deg 16% 96%) 86%,
+  hsl(262deg 15% 98%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$dragon-type-bg: linear-gradient(
+  0deg,
+  hsl(257deg 97% 60%) 0%,
+  hsl(256deg 97% 65%) 7%,
+  hsl(254deg 97% 68%) 14%,
+  hsl(254deg 97% 71%) 21%,
+  hsl(253deg 96% 74%) 26%,
+  hsl(252deg 96% 76%) 31%,
+  hsl(252deg 96% 78%) 35%,
+  hsl(252deg 96% 80%) 37%,
+  hsl(251deg 96% 82%) 39%,
+  hsl(251deg 96% 84%) 41%,
+  hsl(251deg 96% 86%) 43%,
+  hsl(251deg 96% 87%) 47%,
+  hsl(250deg 96% 89%) 51%,
+  hsl(250deg 96% 91%) 56%,
+  hsl(250deg 96% 92%) 61%,
+  hsl(250deg 96% 93%) 67%,
+  hsl(250deg 95% 95%) 73%,
+  hsl(250deg 95% 96%) 79%,
+  hsl(250deg 95% 97%) 86%,
+  hsl(249deg 95% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$dark-type-bg: linear-gradient(
+  0deg,
+  hsl(24deg 23% 36%) 0%,
+  hsl(23deg 16% 42%) 7%,
+  hsl(23deg 12% 47%) 14%,
+  hsl(22deg 10% 51%) 21%,
+  hsl(22deg 10% 55%) 26%,
+  hsl(22deg 9% 59%) 31%,
+  hsl(22deg 9% 63%) 35%,
+  hsl(22deg 9% 66%) 37%,
+  hsl(21deg 8% 69%) 39%,
+  hsl(21deg 8% 72%) 41%,
+  hsl(21deg 8% 75%) 43%,
+  hsl(21deg 8% 78%) 47%,
+  hsl(21deg 8% 81%) 51%,
+  hsl(21deg 7% 83%) 56%,
+  hsl(21deg 7% 86%) 61%,
+  hsl(21deg 7% 89%) 67%,
+  hsl(21deg 7% 91%) 73%,
+  hsl(21deg 7% 93%) 79%,
+  hsl(21deg 7% 96%) 86%,
+  hsl(21deg 7% 98%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$steel-type-bg: linear-gradient(
+  0deg,
+  hsl(240deg 19% 76%) 0%,
+  hsl(240deg 19% 78%) 7%,
+  hsl(240deg 19% 79%) 14%,
+  hsl(240deg 18% 80%) 21%,
+  hsl(240deg 18% 82%) 26%,
+  hsl(240deg 18% 83%) 31%,
+  hsl(240deg 18% 84%) 35%,
+  hsl(240deg 18% 85%) 37%,
+  hsl(240deg 18% 87%) 39%,
+  hsl(240deg 18% 88%) 41%,
+  hsl(240deg 18% 89%) 43%,
+  hsl(240deg 17% 90%) 47%,
+  hsl(240deg 17% 91%) 51%,
+  hsl(240deg 17% 92%) 56%,
+  hsl(240deg 17% 94%) 61%,
+  hsl(240deg 17% 95%) 67%,
+  hsl(240deg 17% 96%) 73%,
+  hsl(240deg 17% 97%) 79%,
+  hsl(240deg 17% 98%) 86%,
+  hsl(240deg 17% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$fairy-type-bg: linear-gradient(
+  0deg,
+  hsl(330deg 50% 68%) 0%,
+  hsl(331deg 49% 70%) 7%,
+  hsl(331deg 48% 72%) 14%,
+  hsl(331deg 48% 74%) 21%,
+  hsl(332deg 47% 76%) 26%,
+  hsl(332deg 47% 78%) 31%,
+  hsl(332deg 46% 80%) 35%,
+  hsl(332deg 46% 81%) 37%,
+  hsl(332deg 46% 83%) 39%,
+  hsl(333deg 45% 84%) 41%,
+  hsl(333deg 45% 86%) 43%,
+  hsl(333deg 45% 88%) 47%,
+  hsl(333deg 44% 89%) 51%,
+  hsl(333deg 44% 91%) 56%,
+  hsl(333deg 44% 92%) 61%,
+  hsl(333deg 43% 93%) 67%,
+  hsl(334deg 43% 95%) 73%,
+  hsl(334deg 43% 96%) 79%,
+  hsl(334deg 43% 97%) 86%,
+  hsl(334deg 42% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$stellar-type-bg: linear-gradient(
+  0deg,
+  hsl(300deg 48% 73%) 0%,
+  hsl(300deg 48% 74%) 7%,
+  hsl(300deg 47% 76%) 14%,
+  hsl(300deg 47% 78%) 21%,
+  hsl(300deg 46% 79%) 26%,
+  hsl(300deg 46% 81%) 31%,
+  hsl(300deg 46% 82%) 35%,
+  hsl(300deg 45% 84%) 37%,
+  hsl(300deg 45% 85%) 39%,
+  hsl(300deg 45% 86%) 41%,
+  hsl(300deg 44% 88%) 43%,
+  hsl(300deg 44% 89%) 47%,
+  hsl(300deg 44% 90%) 51%,
+  hsl(300deg 44% 92%) 56%,
+  hsl(300deg 43% 93%) 61%,
+  hsl(300deg 43% 94%) 67%,
+  hsl(300deg 43% 95%) 73%,
+  hsl(300deg 43% 97%) 79%,
+  hsl(300deg 43% 98%) 86%,
+  hsl(300deg 42% 99%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$unknown-type-bg: linear-gradient(
+  0deg,
+  hsl(0deg 1% 59%) 0%,
+  hsl(0deg 1% 62%) 7%,
+  hsl(0deg 1% 64%) 14%,
+  hsl(0deg 1% 67%) 21%,
+  hsl(0deg 1% 69%) 26%,
+  hsl(0deg 1% 71%) 31%,
+  hsl(0deg 1% 74%) 35%,
+  hsl(0deg 1% 76%) 37%,
+  hsl(0deg 1% 78%) 39%,
+  hsl(0deg 1% 80%) 41%,
+  hsl(0deg 1% 82%) 43%,
+  hsl(0deg 1% 84%) 47%,
+  hsl(0deg 1% 86%) 51%,
+  hsl(0deg 1% 88%) 56%,
+  hsl(0deg 1% 90%) 61%,
+  hsl(0deg 1% 91%) 67%,
+  hsl(0deg 1% 93%) 73%,
+  hsl(0deg 1% 95%) 79%,
+  hsl(0deg 1% 97%) 86%,
+  hsl(0deg 1% 98%) 93%,
+  hsl(0deg 0% 100%) 100%
+);
+
+$normal-type-color: #a8a77a;
+$fire-type-color: #ee8130;
+$water-type-color: #6390f0;
+$electric-type-color: #f7d02c;
+$grass-type-color: #7ac74c;
+$ice-type-color: #96d9d6;
+$fighting-type-color: #c22e28;
+$poison-type-color: #a33ea1;
+$ground-type-color: #e2bf65;
+$flying-type-color: #a98ff3;
+$psychic-type-color: #f95587;
+$bug-type-color: #a6b91a;
+$rock-type-color: #b6a136;
+$ghost-type-color: #735797;
+$dragon-type-color: #6f35fc;
+$dark-type-color: #705746;
+$steel-type-color: #b7b7ce;
+$fairy-type-color: #d685ad;
+$stellar-type-color: #db98db;
 
 /*iPad Pro/Mini/Air/Surface Pro*/
 @media (max-width: 1100px) {
   .card-text {
-    font-size: 20px;
+    font-size: 3vw;
   }
 }
 
 /*iPhone SE/XR/12Pro Pixel 7/iPhone X/*/
 @media (max-width: 767px) {
   .card-text {
-    font-size: 3vw;
+    font-size: 5vw;
   }
 }
 
 /*Galaxy Fold*/
-@media (max-width: 300px) {
+@media (max-width: 376px) {
   .card-text {
-    font-size: 11px;
+    font-size: 5vw;
   }
 }
 
@@ -48,6 +562,7 @@
 }
 
 .card-text {
+  font-size: 3vw;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
@@ -55,16 +570,13 @@
   padding: 0.25rem;
   text-align: center;
   white-space: nowrap;
-  color: black;
+  color: white;
 }
 
 .poke-id {
   color: rgb(179, 170, 170);
-  /* position: absolute; */
-  /* top: 0; */
   text-align: center;
   font-size: 4vw;
-  /* margin-right: 5px; */
 }
 
 /*
@@ -75,427 +587,239 @@ Fairy, Stellar, Unknown
 
 /*Normal Type*/
 .normal-type {
-  border-color: var(--normal-type-color) !important;
+  background: $normal-type-bg !important;
+  border-color: $normal-type-color !important;
   border-width: 3px !important;
 }
 
 .normal-text {
-  /* background-color: #a7a7a0 !important; */
-  background-color: var(--normal-type-color);
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $normal-type-color !important;
+  @include pill-theme;
 }
 
 /*Fire Type*/
 .fire-type {
-  border-color: var(--fire-type-color) !important;
+  background: $fire-type-bg !important;
+  border-color: $fire-type-color !important;
   border-width: 3px !important;
 }
 
 .fire-text {
-  /* background-color: #ecb488 !important; */
-  background-color: var(--fire-type-color);
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $fire-type-color !important;
+  @include pill-theme;
 }
 
 /*Water Type*/
 .water-type {
-  border-color: var(--water-type-color) !important;
+  background: $water-type-bg !important;
+  border-color: $water-type-color !important;
   border-width: 3px !important;
 }
 
 .water-text {
-  /* background-color: #90abe6 !important; */
-  background-color: var(--water-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $water-type-color !important;
+  @include pill-theme;
 }
 
 /*Electric Type*/
 .electric-type {
-  border-color: var(--electric-type-color) !important;
+  background: $electric-type-bg !important;
+  border-color: $electric-type-color !important;
   border-width: 3px !important;
 }
 
 .electric-text {
-  /* background-color: #efd97f !important; */
-  background-color: var(--electric-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $electric-type-color !important;
+  @include pill-theme;
 }
 
 /*Grass Type*/
 .grass-type {
-  border-color: var(--grass-type-color) !important;
+  background: $grass-type-bg !important;
+  border-color: $grass-type-color !important;
   border-width: 3px !important;
 }
 
 .grass-text {
-  /* background-color: #b9dda5 !important; */
-  /* background-color: white; */
-  background-color: var(--grass-type-color) !important;
-  color: white;
-  border-radius: 10px;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  text-align: center;
-  white-space: nowrap;
+  background-color: $grass-type-color !important;
+  @include pill-theme;
 }
 
 /*Ice Type*/
 .ice-type {
-  border-color: var(--ice-type-color) !important;
+  background: $ice-type-bg !important;
+  border-color: $ice-type-color !important;
   border-width: 3px !important;
 }
 
 .ice-text {
-  /* background-color: #bfe8e6 !important; */
-  background-color: var(--ice-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $ice-type-color !important;
+  @include pill-theme;
 }
 
 /*Fighting Type*/
 .fighting-type {
-  border-color: var(--fighting-type-color) !important;
+  background: $fighting-type-bg !important;
+  border-color: $fighting-type-color !important;
   border-width: 3px !important;
 }
 
 .fighting-text {
-  /* background-color: #cd918f !important; */
-  background-color: var(--fighting-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /*   /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $fighting-type-color !important;
+  @include pill-theme;
 }
 
 /*Poison Type*/
 .poison-type {
-  border-color: var(--poison-type-color) !important;
+  background: $poison-type-bg !important;
+  border-color: $poison-type-color !important;
   border-width: 3px !important;
 }
 
 .poison-text {
-  /* background-color: #b898b7 !important; */
-  background-color: var(--poison-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $poison-type-color !important;
+  @include pill-theme;
 }
 
 /*Ground Type*/
 .ground-type {
-  border-color: var(--ground-type-color) !important;
+  background: $ground-type-bg !important;
+  border-color: $ground-type-color !important;
   border-width: 3px !important;
 }
 
 .ground-text {
-  /* background-color: rgb(177, 170, 138) !important; */
-  background-color: var(--ground-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $ground-type-color !important;
+  @include pill-theme;
 }
 
 /*Flying Type*/
 .flying-type {
-  border-color: var(--flying-type-color) !important;
+  background: $flying-type-bg !important;
+  border-color: $flying-type-color !important;
   border-width: 3px !important;
 }
 
 .flying-text {
-  /* background-color: #b9dda5 !important; */
-  background-color: var(--flying-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $flying-type-color !important;
+  @include pill-theme;
 }
 
 /*Psychic Type*/
 .psychic-type {
-  border-color: var(--psychic-type-color) !important;
+  background: $psychic-type-bg !important;
+  border-color: $psychic-type-color !important;
   border-width: 3px !important;
 }
 
 .psychic-text {
-  /* background-color: #ebafc1 !important; */
-  background-color: var(--psychic-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $psychic-type-color !important;
+  @include pill-theme;
 }
 
 /*Bug Type*/
 .bug-type {
-  border-color: var(--bug-type-color) !important;
+  background: $bug-type-bg !important;
+  border-color: $bug-type-color !important;
   border-width: 3px !important;
 }
 
 .bug-text {
-  /* background-color: #ced690 !important; */
-  background-color: var(--bug-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $bug-type-color !important;
+  @include pill-theme;
 }
 
 /*Rock Type*/
 .rock-type {
-  border-color: var(--rock-type-color) !important;
+  background: $rock-type-bg !important;
+  border-color: $rock-type-color !important;
   border-width: 3px !important;
 }
 
 .rock-text {
-  /* background-color: #b5aa73 !important; */
-  background-color: var(--rock-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $rock-type-color !important;
+  @include pill-theme;
 }
 
 /*Ghost Type*/
 .ghost-type {
-  border-color: var(--ghost-type-color) !important;
+  background: $ghost-type-bg !important;
+  border-color: $ghost-type-color !important;
   border-width: 3px !important;
 }
 
 .ghost-text {
-  /* background-color: #b4a5c9 !important; */
-  background-color: var(--ghost-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $ghost-type-color !important;
+  @include pill-theme;
 }
 
 /*Dragon Type*/
 .dragon-type {
-  border-color: var(--dragon-type-color) !important;
+  background: $dragon-type-bg !important;
+  border-color: $dragon-type-color !important;
   border-width: 3px !important;
 }
 
 .dragon-text {
-  /* background-color: #ac90f0 !important; */
-  background-color: var(--dragon-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $dragon-type-color !important;
+  @include pill-theme;
 }
 
 /*Dark Type*/
 .dark-type {
-  border-color: var(--dark-type-color) !important;
+  background: $dragon-type-bg !important;
+  border-color: $dark-type-color !important;
   border-width: 3px !important;
 }
 
 .dark-text {
-  background-color: #988273 !important;
-  border-radius: 10px;
-  color: black;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $dark-type-color !important;
+  @include pill-theme;
 }
 
 /*Steel Type*/
 .steel-type {
-  border-color: var(--steel-type-color) !important;
+  background: $steel-type-bg !important;
+  border-color: $steel-type-color !important;
   border-width: 3px !important;
 }
 
 .steel-text {
-  /* background-color: rgb(188, 168, 156) !important; */
-  background-color: var(--steel-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $steel-type-color !important;
+  @include pill-theme;
 }
 
 /*Fairy Type*/
 .fairy-type {
-  border-color: var(--fairy-type-color) !important;
+  background: $fairy-type-bg !important;
+  border-color: $fairy-type-color !important;
   border-width: 3px !important;
 }
 
 .fairy-text {
-  /* background-color: #d69cb9 !important; */
-  background-color: var(--fairy-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $fairy-type-color !important;
+  @include pill-theme;
 }
 
 /*Stellar Type*/
 .stellar-type {
-  border-color: var(--stellar-type-color) !important;
+  background: $stellar-type-bg !important;
+  border-color: $stellar-type-color !important;
   border-width: 3px !important;
 }
 
 .stellar-text {
-  background-color: var(--stellar-type-color) !important;
-  border-radius: 10px;
-  color: black;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $stellar-type-color !important;
+  @include pill-theme;
 }
 
 /*Unknown Type*/
 .unknown-type {
-  border-color: rgb(151, 149, 149) !important;
+  border-color: $unknown-type-bg !important;
   border-width: 3px !important;
 }
 
 .unknown-text {
   background-color: rgb(151, 149, 149) !important;
-  border-radius: 10px;
-  color: black;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  @include pill-theme;
 }
