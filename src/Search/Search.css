@@ -1,5 +1,6 @@
 input {
-  background-color: #ebe3bd;
+  /* background-color: #ebe3bd; */
+  background-color: rgb(210, 205, 205);
   border-radius: 15px;
   border: none;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

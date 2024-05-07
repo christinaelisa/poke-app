@@ -27,10 +27,10 @@
   }
 }
 
-/*iPhone SE/XR/12Pro Pixel 7/*/
+/*iPhone SE/XR/12Pro Pixel 7/iPhone X/*/
 @media (max-width: 767px) {
   .card-text {
-    font-size: 16px;
+    font-size: 3vw;
   }
 }
 
@@ -41,6 +41,12 @@
   }
 }
 
+.pokeimg {
+  display: block;
+  width: 75%;
+  height: 100%;
+}
+
 .card-text {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
@@ -49,14 +55,16 @@
   padding: 0.25rem;
   text-align: center;
   white-space: nowrap;
+  color: black;
 }
 
 .poke-id {
-  color: black;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 5px;
+  color: rgb(179, 170, 170);
+  /* position: absolute; */
+  /* top: 0; */
+  text-align: center;
+  font-size: 4vw;
+  /* margin-right: 5px; */
 }
 
 /*
@@ -72,15 +80,17 @@ Fairy, Stellar, Unknown
 }
 
 .normal-text {
-  background-color: #a7a7a0 !important;
+  /* background-color: #a7a7a0 !important; */
+  background-color: var(--normal-type-color);
   border-radius: 10px;
-  color: black;
+  /* color: black; */
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -92,15 +102,16 @@ Fairy, Stellar, Unknown
 }
 
 .fire-text {
-  background-color: #ecb488 !important;
+  /* background-color: #ecb488 !important; */
+  background-color: var(--fire-type-color);
   border-radius: 10px;
-  color: black;
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -112,15 +123,17 @@ Fairy, Stellar, Unknown
 }
 
 .water-text {
-  background-color: #90abe6 !important;
+  /* background-color: #90abe6 !important; */
+  background-color: var(--water-type-color) !important;
   border-radius: 10px;
-  color: black;
+  /* color: black; */
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -132,15 +145,17 @@ Fairy, Stellar, Unknown
 }
 
 .electric-text {
-  background-color: #efd97f !important;
+  /* background-color: #efd97f !important; */
+  background-color: var(--electric-type-color) !important;
   border-radius: 10px;
-  color: black;
+  /* color: black; */
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -152,15 +167,17 @@ Fairy, Stellar, Unknown
 }
 
 .grass-text {
-  background-color: #b9dda5 !important;
+  /* background-color: #b9dda5 !important; */
+  /* background-color: white; */
+  background-color: var(--grass-type-color) !important;
+  color: white;
   border-radius: 10px;
-  color: black;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -172,15 +189,16 @@ Fairy, Stellar, Unknown
 }
 
 .ice-text {
-  background-color: #bfe8e6 !important;
+  /* background-color: #bfe8e6 !important; */
+  background-color: var(--ice-type-color) !important;
   border-radius: 10px;
-  color: black;
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -192,15 +210,16 @@ Fairy, Stellar, Unknown
 }
 
 .fighting-text {
-  background-color: #cd918f !important;
+  /* background-color: #cd918f !important; */
+  background-color: var(--fighting-type-color) !important;
   border-radius: 10px;
-  color: black;
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /*   /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -212,15 +231,17 @@ Fairy, Stellar, Unknown
 }
 
 .poison-text {
-  background-color: #b898b7 !important;
+  /* background-color: #b898b7 !important; */
+  background-color: var(--poison-type-color) !important;
   border-radius: 10px;
-  color: black;
+  /* color: black; */
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -232,15 +253,17 @@ Fairy, Stellar, Unknown
 }
 
 .ground-text {
-  background-color: rgb(177, 170, 138) !important;
+  /* background-color: rgb(177, 170, 138) !important; */
+  background-color: var(--ground-type-color) !important;
   border-radius: 10px;
-  color: black;
+  /* color: black; */
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -252,15 +275,17 @@ Fairy, Stellar, Unknown
 }
 
 .flying-text {
-  background-color: #b9dda5 !important;
+  /* background-color: #b9dda5 !important; */
+  background-color: var(--flying-type-color) !important;
   border-radius: 10px;
-  color: black;
+  /* color: black; */
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -272,15 +297,16 @@ Fairy, Stellar, Unknown
 }
 
 .psychic-text {
-  background-color: #ebafc1 !important;
+  /* background-color: #ebafc1 !important; */
+  background-color: var(--psychic-type-color) !important;
   border-radius: 10px;
-  color: black;
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -292,15 +318,17 @@ Fairy, Stellar, Unknown
 }
 
 .bug-text {
-  background-color: #ced690 !important;
+  /* background-color: #ced690 !important; */
+  background-color: var(--bug-type-color) !important;
   border-radius: 10px;
-  color: black;
+  /* color: black; */
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -312,15 +340,16 @@ Fairy, Stellar, Unknown
 }
 
 .rock-text {
-  background-color: #b5aa73 !important;
+  /* background-color: #b5aa73 !important; */
+  background-color: var(--rock-type-color) !important;
   border-radius: 10px;
-  color: black;
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -332,15 +361,16 @@ Fairy, Stellar, Unknown
 }
 
 .ghost-text {
-  background-color: #b4a5c9 !important;
+  /* background-color: #b4a5c9 !important; */
+  background-color: var(--ghost-type-color) !important;
   border-radius: 10px;
-  color: black;
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -352,15 +382,16 @@ Fairy, Stellar, Unknown
 }
 
 .dragon-text {
-  background-color: #ac90f0 !important;
+  /* background-color: #ac90f0 !important; */
+  background-color: var(--dragon-type-color) !important;
   border-radius: 10px;
-  color: black;
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -380,7 +411,7 @@ Fairy, Stellar, Unknown
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -392,15 +423,16 @@ Fairy, Stellar, Unknown
 }
 
 .steel-text {
-  background-color: rgb(188, 168, 156) !important;
+  /* background-color: rgb(188, 168, 156) !important; */
+  background-color: var(--steel-type-color) !important;
   border-radius: 10px;
-  color: black;
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -412,15 +444,16 @@ Fairy, Stellar, Unknown
 }
 
 .fairy-text {
-  background-color: #d69cb9 !important;
+  /* background-color: #d69cb9 !important; */
+  background-color: var(--fairy-type-color) !important;
   border-radius: 10px;
-  color: black;
+  color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -440,7 +473,7 @@ Fairy, Stellar, Unknown
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
@@ -460,7 +493,7 @@ Fairy, Stellar, Unknown
   width: 100%;
   height: auto;
   padding: 0.25rem;
-  margin: 0.25rem;
+  /* margin: 0.25rem; */
   text-align: center;
   white-space: nowrap;
 }
