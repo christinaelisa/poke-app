@@ -1,11 +1,7 @@
-import "../Card/Card.css";
+import "../Card/Card.scss";
 import { Card } from "react-bootstrap";
 
 export default function PokemonCard(props) {
-  // const imageURL = `https://img.pokemondb.net/sprites/emerald/normal/${props.name}.png`;
-
-  // const imageURL = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/other/official-artwork/${props.id}.png`;
-
   const imageURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props.id}.png`;
 
   let cardType = "card";

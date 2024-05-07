@@ -176,8 +176,10 @@ Fairy, Stellar, Unknown
   overflow: none;
   width: 100%;
   height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   text-align: center;
   white-space: nowrap;
 }

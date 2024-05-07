@@ -1,5 +1,5 @@
-import "./Header.css";
-import "../Search/Search.css";
+import "./Header.scss";
+import "../Search/Search.scss";
 import Search from "../Search/Search.jsx";
 
 export default function Header({ handleSearch }) {

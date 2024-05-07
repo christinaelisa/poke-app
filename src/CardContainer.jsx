@@ -1,7 +1,7 @@
 import PokemonCard from "./Card/PokemonCard.jsx";
 import { Container, Row } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
-import "./App.css";
+// import "./App.scss";
 
 export default function CardContainer({ pokemonData, filteredList, search }) {
   const allPokemon = pokemonData.map((pokemon) => (
