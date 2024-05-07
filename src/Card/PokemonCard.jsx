@@ -122,8 +122,10 @@ export default function PokemonCard(props) {
           alt={props.name}
         />
         <Card.Body class="mx-auto mb-3">
-          <p class="card-text">
-            <span class="fw-bold mx-auto py-2">{props.name.toUpperCase()}</span>
+          <p className="card-text">
+            <span class="fw-bold mx-auto py-2">
+              {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
+            </span>
             <br />
             <span className={textType1}>{props.type}</span>
             {props.type2.length > 0 ? (
