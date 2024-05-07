@@ -1,44 +1,40 @@
-:root {
-  --normal-type-color: #a8a77a;
-  --fire-type-color: #ee8130;
-  --water-type-color: #6390f0;
-  --electric-type-color: #f7d02c;
-  --grass-type-color: #7ac74c;
-  --ice-type-color: #96d9d6;
-  --fighting-type-color: #c22e28;
-  --poison-type-color: #a33ea1;
-  --ground-type-color: #e2bf65;
-  --flying-type-color: #a98ff3;
-  --psychic-type-color: #f95587;
-  --bug-type-color: #a6b91a;
-  --rock-type-color: #b6a136;
-  --ghost-type-color: #735797;
-  --dragon-type-color: #6f35fc;
-  --dark-type-color: #705746;
-  --steel-type-color: #b7b7ce;
-  --fairy-type-color: #d685ad;
-  --stellar-type-color: #db98db;
-}
+@import "CardGradients";
+@import "CardColors";
 
 /*iPad Pro/Mini/Air/Surface Pro*/
 @media (max-width: 1100px) {
-  .card-text {
-    font-size: 20px;
-  }
-}
-
-/*iPhone SE/XR/12Pro Pixel 7/iPhone X/*/
-@media (max-width: 767px) {
   .card-text {
     font-size: 3vw;
   }
 }
 
-/*Galaxy Fold*/
-@media (max-width: 300px) {
+/*iPhone SE/XR/12Pro Pixel 7/*/
+@media (max-width: 767px) {
   .card-text {
-    font-size: 11px;
+    font-size: 5vw;
   }
+}
+
+/*Galaxy Fold/iPhone X*/
+@media (min-width: 150px) and (max-width: 380px) {
+  .card-text {
+    font-size: 5vw;
+  }
+}
+
+@mixin pill-theme {
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 2vw;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow: none;
+  width: 100%;
+  height: auto;
+  padding: 0.35rem;
+  margin: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .pokeimg {
@@ -48,6 +44,7 @@
 }
 
 .card-text {
+  font-size: 3vw;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
@@ -55,16 +52,13 @@
   padding: 0.25rem;
   text-align: center;
   white-space: nowrap;
-  color: black;
+  color: white;
 }
 
 .poke-id {
   color: rgb(179, 170, 170);
-  /* position: absolute; */
-  /* top: 0; */
   text-align: center;
   font-size: 4vw;
-  /* margin-right: 5px; */
 }
 
 /*
@@ -75,427 +69,239 @@ Fairy, Stellar, Unknown
 
 /*Normal Type*/
 .normal-type {
-  border-color: var(--normal-type-color) !important;
+  background: $normal-type-bg !important;
+  border-color: $normal-type-color !important;
   border-width: 3px !important;
 }
 
 .normal-text {
-  /* background-color: #a7a7a0 !important; */
-  background-color: var(--normal-type-color);
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $normal-type-color !important;
+  @include pill-theme;
 }
 
 /*Fire Type*/
 .fire-type {
-  border-color: var(--fire-type-color) !important;
+  background: $fire-type-bg !important;
+  border-color: $fire-type-color !important;
   border-width: 3px !important;
 }
 
 .fire-text {
-  /* background-color: #ecb488 !important; */
-  background-color: var(--fire-type-color);
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $fire-type-color !important;
+  @include pill-theme;
 }
 
 /*Water Type*/
 .water-type {
-  border-color: var(--water-type-color) !important;
+  background: $water-type-bg !important;
+  border-color: $water-type-color !important;
   border-width: 3px !important;
 }
 
 .water-text {
-  /* background-color: #90abe6 !important; */
-  background-color: var(--water-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $water-type-color !important;
+  @include pill-theme;
 }
 
 /*Electric Type*/
 .electric-type {
-  border-color: var(--electric-type-color) !important;
+  background: $electric-type-bg !important;
+  border-color: $electric-type-color !important;
   border-width: 3px !important;
 }
 
 .electric-text {
-  /* background-color: #efd97f !important; */
-  background-color: var(--electric-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $electric-type-color !important;
+  @include pill-theme;
 }
 
 /*Grass Type*/
 .grass-type {
-  border-color: var(--grass-type-color) !important;
+  background: $grass-type-bg !important;
+  border-color: $grass-type-color !important;
   border-width: 3px !important;
 }
 
 .grass-text {
-  /* background-color: #b9dda5 !important; */
-  /* background-color: white; */
-  background-color: var(--grass-type-color) !important;
-  color: white;
-  border-radius: 10px;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  text-align: center;
-  white-space: nowrap;
+  background-color: $grass-type-color !important;
+  @include pill-theme;
 }
 
 /*Ice Type*/
 .ice-type {
-  border-color: var(--ice-type-color) !important;
+  background: $ice-type-bg !important;
+  border-color: $ice-type-color !important;
   border-width: 3px !important;
 }
 
 .ice-text {
-  /* background-color: #bfe8e6 !important; */
-  background-color: var(--ice-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $ice-type-color !important;
+  @include pill-theme;
 }
 
 /*Fighting Type*/
 .fighting-type {
-  border-color: var(--fighting-type-color) !important;
+  background: $fighting-type-bg !important;
+  border-color: $fighting-type-color !important;
   border-width: 3px !important;
 }
 
 .fighting-text {
-  /* background-color: #cd918f !important; */
-  background-color: var(--fighting-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /*   /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $fighting-type-color !important;
+  @include pill-theme;
 }
 
 /*Poison Type*/
 .poison-type {
-  border-color: var(--poison-type-color) !important;
+  background: $poison-type-bg !important;
+  border-color: $poison-type-color !important;
   border-width: 3px !important;
 }
 
 .poison-text {
-  /* background-color: #b898b7 !important; */
-  background-color: var(--poison-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $poison-type-color !important;
+  @include pill-theme;
 }
 
 /*Ground Type*/
 .ground-type {
-  border-color: var(--ground-type-color) !important;
+  background: $ground-type-bg !important;
+  border-color: $ground-type-color !important;
   border-width: 3px !important;
 }
 
 .ground-text {
-  /* background-color: rgb(177, 170, 138) !important; */
-  background-color: var(--ground-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $ground-type-color !important;
+  @include pill-theme;
 }
 
 /*Flying Type*/
 .flying-type {
-  border-color: var(--flying-type-color) !important;
+  background: $flying-type-bg !important;
+  border-color: $flying-type-color !important;
   border-width: 3px !important;
 }
 
 .flying-text {
-  /* background-color: #b9dda5 !important; */
-  background-color: var(--flying-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $flying-type-color !important;
+  @include pill-theme;
 }
 
 /*Psychic Type*/
 .psychic-type {
-  border-color: var(--psychic-type-color) !important;
+  background: $psychic-type-bg !important;
+  border-color: $psychic-type-color !important;
   border-width: 3px !important;
 }
 
 .psychic-text {
-  /* background-color: #ebafc1 !important; */
-  background-color: var(--psychic-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $psychic-type-color !important;
+  @include pill-theme;
 }
 
 /*Bug Type*/
 .bug-type {
-  border-color: var(--bug-type-color) !important;
+  background: $bug-type-bg !important;
+  border-color: $bug-type-color !important;
   border-width: 3px !important;
 }
 
 .bug-text {
-  /* background-color: #ced690 !important; */
-  background-color: var(--bug-type-color) !important;
-  border-radius: 10px;
-  /* color: black; */
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $bug-type-color !important;
+  @include pill-theme;
 }
 
 /*Rock Type*/
 .rock-type {
-  border-color: var(--rock-type-color) !important;
+  background: $rock-type-bg !important;
+  border-color: $rock-type-color !important;
   border-width: 3px !important;
 }
 
 .rock-text {
-  /* background-color: #b5aa73 !important; */
-  background-color: var(--rock-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $rock-type-color !important;
+  @include pill-theme;
 }
 
 /*Ghost Type*/
 .ghost-type {
-  border-color: var(--ghost-type-color) !important;
+  background: $ghost-type-bg !important;
+  border-color: $ghost-type-color !important;
   border-width: 3px !important;
 }
 
 .ghost-text {
-  /* background-color: #b4a5c9 !important; */
-  background-color: var(--ghost-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $ghost-type-color !important;
+  @include pill-theme;
 }
 
 /*Dragon Type*/
 .dragon-type {
-  border-color: var(--dragon-type-color) !important;
+  background: $dragon-type-bg !important;
+  border-color: $dragon-type-color !important;
   border-width: 3px !important;
 }
 
 .dragon-text {
-  /* background-color: #ac90f0 !important; */
-  background-color: var(--dragon-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $dragon-type-color !important;
+  @include pill-theme;
 }
 
 /*Dark Type*/
 .dark-type {
-  border-color: var(--dark-type-color) !important;
+  background: $dragon-type-bg !important;
+  border-color: $dark-type-color !important;
   border-width: 3px !important;
 }
 
 .dark-text {
-  background-color: #988273 !important;
-  border-radius: 10px;
-  color: black;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $dark-type-color !important;
+  @include pill-theme;
 }
 
 /*Steel Type*/
 .steel-type {
-  border-color: var(--steel-type-color) !important;
+  background: $steel-type-bg !important;
+  border-color: $steel-type-color !important;
   border-width: 3px !important;
 }
 
 .steel-text {
-  /* background-color: rgb(188, 168, 156) !important; */
-  background-color: var(--steel-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $steel-type-color !important;
+  @include pill-theme;
 }
 
 /*Fairy Type*/
 .fairy-type {
-  border-color: var(--fairy-type-color) !important;
+  background: $fairy-type-bg !important;
+  border-color: $fairy-type-color !important;
   border-width: 3px !important;
 }
 
 .fairy-text {
-  /* background-color: #d69cb9 !important; */
-  background-color: var(--fairy-type-color) !important;
-  border-radius: 10px;
-  color: white;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $fairy-type-color !important;
+  @include pill-theme;
 }
 
 /*Stellar Type*/
 .stellar-type {
-  border-color: var(--stellar-type-color) !important;
+  background: $stellar-type-bg !important;
+  border-color: $stellar-type-color !important;
   border-width: 3px !important;
 }
 
 .stellar-text {
-  background-color: var(--stellar-type-color) !important;
-  border-radius: 10px;
-  color: black;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  background-color: $stellar-type-color !important;
+  @include pill-theme;
 }
 
 /*Unknown Type*/
 .unknown-type {
-  border-color: rgb(151, 149, 149) !important;
+  border-color: $unknown-type-bg !important;
   border-width: 3px !important;
 }
 
 .unknown-text {
   background-color: rgb(151, 149, 149) !important;
-  border-radius: 10px;
-  color: black;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  overflow: none;
-  width: 100%;
-  height: auto;
-  padding: 0.25rem;
-  /* margin: 0.25rem; */
-  text-align: center;
-  white-space: nowrap;
+  @include pill-theme;
 }

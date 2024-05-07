@@ -113,25 +113,29 @@ export default function PokemonCard(props) {
   }
 
   return (
-    <Card className={cardType}>
-      <div class="poke-id fw-bold">#{props.id}</div>
-      <Card.Img
-        class="mx-auto mt-4 mb-1 pokeimg"
-        src={imageURL}
-        alt={props.name}
-      />
-      <Card.Body class="mx-auto mb-3">
-        <p class="card-text">
-          <span class="fw-bold mx-auto py-2">{props.name.toUpperCase()}</span>
-          <br />
-          <span className={textType1}>{props.type}</span>
-          {props.type2.length > 0 ? (
-            <span className={textType2}>{props.type2}</span>
-          ) : (
-            <span></span>
-          )}
-        </p>
-      </Card.Body>
-    </Card>
+    <div class="mt-2 mb-2">
+      <Card className={cardType}>
+        <div class="poke-id fw-bold">#{props.id}</div>
+        <Card.Img
+          class="mx-auto mt-4 mb-1 pokeimg"
+          src={imageURL}
+          alt={props.name}
+        />
+        <Card.Body class="mx-auto mb-3">
+          <p className="card-text">
+            <span class="fw-bold mx-auto py-2">
+              {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
+            </span>
+            <br />
+            <span className={textType1}>{props.type}</span>
+            {props.type2.length > 0 ? (
+              <span className={textType2}>{props.type2}</span>
+            ) : (
+              <span></span>
+            )}
+          </p>
+        </Card.Body>
+      </Card>
+    </div>
   );
 }
