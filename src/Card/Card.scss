@@ -1,32 +1,22 @@
+/*
+Pokemon types: Normal, Fire, Water, Electric, Grass, Ice, Fighting, 
+Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel,
+Fairy, Stellar, Unknown
+*/
+
 @import "CardGradients";
 @import "CardColors";
 
-/*iPad Pro/Mini/Air/Surface Pro*/
-@media (max-width: 1100px) {
-  .card-text {
-    font-size: 3vw;
-  }
-}
-
-/*iPhone SE/XR/12Pro Pixel 7/*/
-@media (max-width: 767px) {
-  .card-text {
-    font-size: 5vw;
-  }
-}
-
-/*Galaxy Fold/iPhone X*/
-@media (min-width: 150px) and (max-width: 380px) {
-  .card-text {
-    font-size: 5vw;
-  }
-}
+$xs-breakpoint: 576px;
+$s-breakpoint: 768px;
+$md-breakpoint: 992px;
+$lg-breakpoint: 1200px;
+$xl-breakpoint: 1400px;
 
 @mixin pill-theme {
   border-radius: 10px;
   border: 2px solid #ffffff;
   color: #ffffff;
-  font-size: 2vw;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
@@ -37,14 +27,7 @@
   white-space: nowrap;
 }
 
-.pokeimg {
-  display: block;
-  width: 75%;
-  height: 100%;
-}
-
 .card-text {
-  font-size: 3vw;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow: none;
   width: 100%;
@@ -58,14 +41,14 @@
 .poke-id {
   color: rgb(179, 170, 170);
   text-align: center;
-  font-size: 4vw;
+  // font-size: 4vw;
 }
 
-/*
-Pokemon types: Normal, Fire, Water, Electric, Grass, Ice, Fighting, 
-Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel,
-Fairy, Stellar, Unknown
-*/
+.pokeimg {
+  display: block;
+  width: 75%;
+  height: auto;
+}
 
 /*Normal Type*/
 .normal-type {

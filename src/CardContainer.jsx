@@ -1,7 +1,6 @@
 import PokemonCard from "./Card/PokemonCard.jsx";
 import { Container, Row } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
-// import "./App.scss";
 
 export default function CardContainer({ pokemonData, filteredList, search }) {
   const allPokemon = pokemonData.map((pokemon) => (
@@ -42,9 +41,9 @@ export default function CardContainer({ pokemonData, filteredList, search }) {
 
   return (
     <Container fluid>
-        <Row xs={1} sm={3} md={3} lg={3} xl={4}>
-          {search ? filteredPokemon : allPokemon}
-        </Row>
+      <Row xs={1} sm={3} md={3} lg={3} xl={4}>
+        {search ? filteredPokemon : allPokemon}
+      </Row>
     </Container>
   );
 }

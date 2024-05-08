@@ -115,7 +115,7 @@ export default function PokemonCard(props) {
   return (
     <div class="mt-2 mb-2">
       <Card className={cardType}>
-        <div class="poke-id fw-bold">#{props.id}</div>
+        <h1 class="poke-id fw-bold ">#{props.id}</h1>
         <Card.Img
           class="mx-auto mt-4 mb-1 pokeimg"
           src={imageURL}
@@ -123,10 +123,9 @@ export default function PokemonCard(props) {
         />
         <Card.Body class="mx-auto mb-3">
           <p className="card-text">
-            <span class="fw-bold mx-auto py-2">
+            <h2 class="fw-bold mx-auto py-2">
               {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
-            </span>
-            <br />
+            </h2>
             <span className={textType1}>{props.type}</span>
             {props.type2.length > 0 ? (
               <span className={textType2}>{props.type2}</span>
