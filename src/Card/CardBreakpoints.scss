@@ -1,0 +1,77 @@
+$xs-breakpoint: 576px;
+$s-breakpoint: 769px;
+$md-breakpoint: 992px;
+$lg-breakpoint: 1200px;
+$xl-breakpoint: 1400px;
+
+$xs-font: 7vw;
+$s-font: 4vw;
+$md-font: 4vw;
+$lg-font: 3vw;
+$xl-font: 2vw;
+
+@media screen and (max-width: $xs-breakpoint) {
+  .card-text {
+    font-size: $xs-font !important;
+    font-weight: 600 !important;
+  }
+  .poke-id {
+    font-size: $xs-font !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media screen and (min-width: $xs-breakpoint) and (max-width: $s-breakpoint) {
+  .card-text {
+    font-size: $s-font !important;
+    font-weight: 600 !important;
+  }
+  .poke-id {
+    font-size: $s-font !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media screen and (min-width: $s-breakpoint) and (max-width: $md-breakpoint) {
+  .card-text {
+    font-size: $md-font !important;
+    font-weight: 600 !important;
+  }
+  .poke-id {
+    font-size: $md-font !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media screen and (min-width: $md-breakpoint) and (max-width: $lg-breakpoint) {
+  .card-text {
+    font-size: $lg-font !important;
+    font-weight: 600 !important;
+  }
+  .poke-id {
+    font-size: $lg-font !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media screen and (min-width: $lg-breakpoint) and (max-width: $xl-breakpoint) {
+  .card-text {
+    font-size: $xl-font !important;
+    font-weight: 600 !important;
+  }
+  .poke-id {
+    font-size: $xl-font !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media screen and (min-width: $xl-breakpoint) {
+  .card-text {
+    font-size: $xl-font !important;
+    font-weight: 600 !important;
+  }
+  .poke-id {
+    font-size: $xl-font !important;
+    font-weight: 600 !important;
+  }
+}

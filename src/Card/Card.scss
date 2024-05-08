@@ -6,12 +6,7 @@ Fairy, Stellar, Unknown
 
 @import "CardGradients";
 @import "CardColors";
-
-$xs-breakpoint: 576px;
-$s-breakpoint: 768px;
-$md-breakpoint: 992px;
-$lg-breakpoint: 1200px;
-$xl-breakpoint: 1400px;
+@import "CardBreakpoints.scss";
 
 @mixin pill-theme {
   border-radius: 10px;
@@ -35,13 +30,12 @@ $xl-breakpoint: 1400px;
   padding: 0.25rem;
   text-align: center;
   white-space: nowrap;
-  color: white;
+  color: #ffffff;
 }
 
 .poke-id {
   color: rgb(179, 170, 170);
   text-align: center;
-  // font-size: 4vw;
 }
 
 .pokeimg {
