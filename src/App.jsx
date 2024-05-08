@@ -37,14 +37,12 @@ function App() {
           throw new Error("Network could not complete request");
         }
         const data = await response.json();
-        setPokemon(data.results);
         const pokeURL = data.results.map((pokemon) => pokemon.url);
         const allPokeData = await Promise.all(pokeURL.map((url) => fetch(url)));
         const allPokeObj = await Promise.all(
           allPokeData.map((res) => res.json())
         );
         setPokemon(allPokeObj);
-        console.log(allPokeObj);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -55,7 +53,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div className="error">Loading...</div>;
+    return <div className="error">Loading Pokémon...</div>;
   }
 
   if (error) {
