@@ -4,3 +4,6 @@ PokéApp is a React JS application that allows users to filter through cards con
 
 This project uses React JS, React hooks, JSX, Vite.js, the Pokédex API, fetch API, Bootstrap, SASS/CSS and HTML.
 
+![pokedex image](/pokedex_image.jpg)
+
+
