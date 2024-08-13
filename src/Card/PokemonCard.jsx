@@ -1,5 +1,6 @@
-import "../Card/Card.scss";
+import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
+import "../Card/Card.scss";
 
 export default function PokemonCard(props) {
   const imageURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props.id}.png`;
@@ -113,30 +114,32 @@ export default function PokemonCard(props) {
   }
 
   return (
-    <div class="mt-2 mb-2">
-      <Card className={cardType}>
-        <span class="poke-id fw-bold" className="poke-id">
-          #{props.id}
-        </span>
-        <Card.Img
-          class="mx-auto mt-4 mb-1 pokeimg"
-          src={imageURL}
-          alt={props.name}
-        />
-        <Card.Body class="mx-auto mb-3 card-text">
+    <div class="my-2">
+      <Link to={`/${props.id}`} style={{ textDecoration: "none" }}>
+        <Card className={cardType}>
+          <span class="poke-id fw-bold" className="poke-id">
+            #{props.id}
+          </span>
+          <Card.Img
+            class="mx-auto mt-4 mb-1 pokeimg"
+            src={imageURL}
+            alt={props.name}
+          />
+          <Card.Body class="mx-auto mb-3 card-text">
             <span class="py-2">
               {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
             </span>
-        </Card.Body>
-        <Card.Body class="mx-auto mb-3">
-          <span className={textType1}>{props.type}</span>
-          {props.type2.length > 0 ? (
-            <span className={textType2}>{props.type2}</span>
-          ) : (
-            <span></span>
-          )}
-        </Card.Body>
-      </Card>
+          </Card.Body>
+          <Card.Body class="mx-auto mb-3">
+            <span className={textType1}>{props.type}</span>
+            {props.type2.length > 0 ? (
+              <span className={textType2}>{props.type2}</span>
+            ) : (
+              <span></span>
+            )}
+          </Card.Body>
+        </Card>
+      </Link>
     </div>
   );
 }

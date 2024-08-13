@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "./Header/Header.jsx";
+import PokemonCard from "./Card/PokemonCard.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CardContainer from "./CardContainer.jsx";
+import Stats from "./Stats.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { debounce } from "lodash";
 

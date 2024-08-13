@@ -1,0 +1,32 @@
+@import "./Card/CardColors.scss";
+@import "./Card/CardGradients.scss";
+
+.stats-card {
+  border: 0 !important;
+}
+
+.stats-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.table {
+  text-align: center;
+  width: 100%;
+}
+
+.table > tbody > tr > td:first-child {
+  text-align: right;
+  font-weight: bold;
+}
+
+.table > tbody > tr > td:nth-child(2) {
+  text-align: left;
+  color: black;
+}
+
+.poke-img {
+  width: 25%;
+  height: auto;
+  display: block;
+}
